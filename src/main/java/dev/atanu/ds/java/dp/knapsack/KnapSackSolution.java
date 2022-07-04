@@ -59,7 +59,7 @@ public class KnapSackSolution {
 	 * @return
 	 */
 	public int knapSackMemoization(int maxWt, int[] wt, int[] val, int n) {
-		int dp[][] = new int[n + 1][maxWt + 1];
+		int[][] dp = new int[n + 1][maxWt + 1];
 		for (int i = 0; i < n + 1; i++) {
 			for (int j = 0; j < maxWt + 1; j++) {
 				dp[i][j] = -1;
@@ -121,8 +121,9 @@ public class KnapSackSolution {
 	 */
 	public int knapSackFinal(int maxWt, int[] wt, int[] val, int n) {
 		int[] dp = new int[maxWt + 1];
-		// Need to initialize the dp arr with zero. But it is not required in Java array.
-		
+		// Need to initialize the dp array with zero. But it is not required in Java
+		// array.
+
 		for (int i = 1; i <= n; i++) {
 			for (int j = maxWt; j >= 0; j--) {
 				if (wt[i - 1] <= j) {
