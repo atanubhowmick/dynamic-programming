@@ -21,7 +21,7 @@ public class MinimumDiffSubsetsSumSolution {
 	}
 
 	/**
-	 * Not working for negative input
+	 * Works only for positive input
 	 * 
 	 * @param nums
 	 * @return
@@ -35,10 +35,10 @@ public class MinimumDiffSubsetsSumSolution {
 	}
 
 	private int minDiffSubsetSum(int[] nums, int sum, int n) {
-		int halfSum = sum / 2;
-		boolean[][] dp = new boolean[n + 1][halfSum + 1];
+		int target = sum / 2;
+		boolean[][] dp = new boolean[n + 1][target + 1];
 		for (int i = 0; i <= n; i++) {
-			for (int j = 0; j <= halfSum; j++) {
+			for (int j = 0; j <= target; j++) {
 				if (j == 0) {
 					dp[i][j] = true;
 				} else if (i == 0) {
@@ -52,7 +52,7 @@ public class MinimumDiffSubsetsSumSolution {
 		}
 
 		int diff = sum;
-		for (int j = halfSum; j >= 0; j--) {
+		for (int j = target; j >= 0; j--) {
 			if (dp[n][j]) {
 				diff = sum - 2 * j;
 				break;
