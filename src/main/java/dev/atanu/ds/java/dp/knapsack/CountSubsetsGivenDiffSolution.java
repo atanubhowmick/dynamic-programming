@@ -17,10 +17,10 @@ public class CountSubsetsGivenDiffSolution {
 	public static void main(String[] args) {
 		int[] nums = new int[] { 3, 5, 6, 10, 15 };
 		CountSubsetsGivenDiffSolution solution = new CountSubsetsGivenDiffSolution();
-		System.out.println(solution.countWithGivenSum(nums, 1));
+		System.out.println(solution.countWithGivenDiff(nums, 1));
 	}
 
-	private int countWithGivenSum(int[] nums, int diff) {
+	public int countWithGivenDiff(int[] nums, int diff) {
 		int sum = 0;
 		for (int num : nums) {
 			sum += num;

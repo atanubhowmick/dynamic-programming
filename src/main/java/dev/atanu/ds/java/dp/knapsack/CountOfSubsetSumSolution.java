@@ -15,7 +15,7 @@ public class CountOfSubsetSumSolution {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] nums = new int[] { 1, 2, 3, 3, 5 };
+		int[] nums = new int[] { 0, 1, 2, 3, 3, 5 };
 		CountOfSubsetSumSolution solution = new CountOfSubsetSumSolution();
 		System.out.println(solution.getSubsetCount(nums, 10, nums.length));
 	}
@@ -29,13 +29,18 @@ public class CountOfSubsetSumSolution {
 	 */
 	public int getSubsetCount(int[] nums, int sum, int n) {
 		int[][] dp = new int[n + 1][sum + 1];
-		for (int i = 0; i <= n; i++) {
+
+		// If sum is zero, and array is empty, 1 would be returned
+		dp[0][0] = 1;
+		
+		// First row initialization
+		for (int j = 1; j <= sum; j++) {
+			dp[0][j] = 0;
+		}
+
+		for (int i = 1; i <= n; i++) {
 			for (int j = 0; j <= sum; j++) {
-				if (j == 0) {
-					dp[i][j] = 1;
-				} else if (i == 0) {
-					dp[i][j] = 0;
-				} else if (nums[i - 1] <= j) {
+				if (nums[i - 1] <= j) {
 					dp[i][j] = dp[i - 1][j - nums[i - 1]] + dp[i - 1][j];
 				} else {
 					dp[i][j] = dp[i - 1][j];

@@ -60,8 +60,8 @@ public class KnapSackSolution {
 	 */
 	public int knapSackMemoization(int maxWt, int[] wt, int[] val, int n) {
 		int[][] dp = new int[n + 1][maxWt + 1];
-		for (int i = 0; i < n + 1; i++) {
-			for (int j = 0; j < maxWt + 1; j++) {
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= maxWt; j++) {
 				dp[i][j] = -1;
 			}
 		}
