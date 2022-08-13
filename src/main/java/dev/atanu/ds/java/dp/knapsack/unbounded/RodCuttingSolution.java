@@ -50,7 +50,7 @@ public class RodCuttingSolution {
 			return cutRodRecursion(price, len, maxLen, n - 1);
 		}
 	}
-	
+
 	private int cutRodRecursion(int[] price, int[] len, int maxLen, int n, int i) {
 		if (i == n || maxLen == 0) {
 			return 0;
@@ -121,7 +121,7 @@ public class RodCuttingSolution {
 				if (i == 0 || j == 0) {
 					dp[i][j] = 0;
 				} else if (len[i - 1] <= j) {
-					dp[i][j] = Math.max((price[i - 1] + dp[i][j - len[i - 1]]), dp[i - 1][j]);
+					dp[i][j] = Math.max((dp[i][j - len[i - 1]] + price[i - 1]), dp[i - 1][j]);
 				} else {
 					dp[i][j] = dp[i - 1][j];
 				}
