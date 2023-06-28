@@ -22,7 +22,7 @@ public class CoinChangeSolution2 {
 	public static void main(String[] args) {
 		CoinChangeSolution2 solution = new CoinChangeSolution2();
 		int[] price = new int[] { 4, 7, 3 };
-		int amount = 5;
+		int amount = 18;
 		System.out.println(solution.coinChange(price, amount));
 		System.out.println(solution.coinChangeTopDown1D(price, amount));
 	}
@@ -39,7 +39,7 @@ public class CoinChangeSolution2 {
 
 		int[][] dp = new int[n + 1][amount + 1];
 
-		// First row initialization
+		// First col initialization
 		for (int i = 1; i <= n; i++) {
 			dp[i][0] = 0;
 		}
@@ -52,7 +52,7 @@ public class CoinChangeSolution2 {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= amount; j++) {
 				if (coins[i - 1] <= j) {
-					dp[i][j] = Math.min(dp[i][j - coins[i - 1]] + 1, dp[i - 1][j]);
+					dp[i][j] = Math.min(1 + dp[i][j - coins[i - 1]], dp[i - 1][j]);
 				} else {
 					dp[i][j] = dp[i - 1][j];
 				}

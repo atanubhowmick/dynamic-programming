@@ -15,9 +15,9 @@ public class TargetSumSolution {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] nums = new int[] { 7, 9, 3, 8, 0, 2, 4, 8, 3, 9 };
+		int[] nums = new int[] { 1, 1, 1, 1, 1 };
 		TargetSumSolution solution = new TargetSumSolution();
-		System.out.println(solution.findTargetSumWays(nums, 0));
+		System.out.println(solution.findTargetSumWays(nums, 3));
 	}
 
 	/**
