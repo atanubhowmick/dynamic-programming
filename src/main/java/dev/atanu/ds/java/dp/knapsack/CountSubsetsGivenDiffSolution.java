@@ -4,6 +4,9 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
+ * Sequence - 5
+ * <br>
+ * 
  * https://leetcode.com/discuss/interview-question/1271034/count-no-of-subsets-with-given-difference-dp
  * 
  * @author Atanu Bhowmick
@@ -34,7 +37,7 @@ public class CountSubsetsGivenDiffSolution {
 		int reqSum = (diff + sum) / 2;
 
 		CountOfSubsetSumSolution solution = new CountOfSubsetSumSolution();
-		return solution.getSubsetCount(nums, reqSum, nums.length);
+		return solution.getSubsetCount(nums, reqSum);
 	}
 
 }

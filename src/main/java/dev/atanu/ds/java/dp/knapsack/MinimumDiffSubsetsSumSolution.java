@@ -4,7 +4,10 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
- * https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/submissions/
+ * Sequence - 7
+ * <br>
+ * 
+ * https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/
  * 
  * @author Atanu Bhowmick
  *

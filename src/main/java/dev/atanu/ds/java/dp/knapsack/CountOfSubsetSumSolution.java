@@ -4,6 +4,9 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
+ * Sequence - 4
+ * <br>
+ * 
  * https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/
  * 
  * @author Atanu Bhowmick
@@ -17,7 +20,7 @@ public class CountOfSubsetSumSolution {
 	public static void main(String[] args) {
 		int[] nums = new int[] { 0, 1, 2, 3, 3, 5 };
 		CountOfSubsetSumSolution solution = new CountOfSubsetSumSolution();
-		System.out.println(solution.getSubsetCount(nums, 10, nums.length));
+		System.out.println(solution.getSubsetCount(nums, 10));
 	}
 
 	/**
@@ -27,7 +30,8 @@ public class CountOfSubsetSumSolution {
 	 * @param n
 	 * @return
 	 */
-	public int getSubsetCount(int[] nums, int sum, int n) {
+	public int getSubsetCount(int[] nums, int sum) {
+		int n = nums.length;
 		int[][] dp = new int[n + 1][sum + 1];
 
 		// If sum is zero, and array is empty, 1 would be returned

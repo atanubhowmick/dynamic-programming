@@ -4,6 +4,9 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
+ * Sequence - 2
+ * <br>
+ * 
  * https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
  * 
  * @author Atanu Bhowmick
@@ -59,10 +62,10 @@ public class SubsetSumSolution {
 		Boolean[][] dp = new Boolean[n + 1][sum + 1];
 		// No need to initialize the array as by default it would be filled with NULL
 		// values. Will use this NULL check to get the previous sub-problem outcome.
-		return hasSubsetSumMemoizationRec(nums, sum, n, dp);
+		return hasSubsetSumMemoizationRec(dp, nums, sum, n);
 	}
 
-	private Boolean hasSubsetSumMemoizationRec(int[] nums, int sum, int n, Boolean[][] dp) {
+	private Boolean hasSubsetSumMemoizationRec(Boolean[][] dp, int[] nums, int sum, int n) {
 		if (dp[n][sum] != null) {
 			return dp[n][sum];
 		}
@@ -74,9 +77,10 @@ public class SubsetSumSolution {
 		}
 
 		if (nums[n - 1] <= sum) {
-			dp[n][sum] = hasSubsetSum(nums, sum - nums[n - 1], n - 1) || hasSubsetSum(nums, sum, n - 1);
+			dp[n][sum] = hasSubsetSumMemoizationRec(dp, nums, sum - nums[n - 1], n - 1) 
+					|| hasSubsetSumMemoizationRec(dp, nums, sum, n - 1);
 		} else {
-			dp[n][sum] = hasSubsetSum(nums, sum, n - 1);
+			dp[n][sum] = hasSubsetSumMemoizationRec(dp, nums, sum, n - 1);
 		}
 
 		return dp[n][sum];

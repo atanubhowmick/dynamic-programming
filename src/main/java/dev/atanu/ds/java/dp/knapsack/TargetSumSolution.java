@@ -4,6 +4,9 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
+ * Sequence - 6
+ * <br>
+ * 
  * https://leetcode.com/problems/target-sum/
  * 
  * @author Atanu Bhowmick
@@ -48,6 +51,6 @@ public class TargetSumSolution {
 		int reqSum = (target + sum) / 2;
 
 		CountOfSubsetSumSolution solution = new CountOfSubsetSumSolution();
-		return solution.getSubsetCount(nums, reqSum, nums.length);
+		return solution.getSubsetCount(nums, reqSum);
 	}
 }

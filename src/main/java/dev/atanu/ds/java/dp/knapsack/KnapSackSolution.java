@@ -1,6 +1,9 @@
 package dev.atanu.ds.java.dp.knapsack;
 
 /**
+ * Sequence - 1
+ * <br>
+ * 
  * https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  * 
  * @author Atanu Bhowmick
