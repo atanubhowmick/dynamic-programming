@@ -30,4 +30,18 @@ public class InsertDeleteIdenticalString {
 		int lcsLen = lcs.lcsBottomUp(text1, text2);
 		return (text1.length() - lcsLen) + (text2.length() - lcsLen);
 	}
+	
+	
+	/**
+	 * https://leetcode.com/problems/delete-operation-for-two-strings/
+	 * 
+	 * @param word1
+	 * @param word2
+	 * @return
+	 */
+	public int minDistance(String word1, String word2) {
+		LongestCommonSubsequence lcs = new LongestCommonSubsequence();
+        int lcsLen = lcs.lcsBottomUp(word1, word2);
+        return (word1.length() - lcsLen) + (word2.length() - lcsLen);
+    }
 }
