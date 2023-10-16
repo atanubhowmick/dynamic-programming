@@ -39,10 +39,8 @@ public class CoinChangeSolution2 {
 
 		int[][] dp = new int[n + 1][amount + 1];
 
-		// First col initialization
-		for (int i = 1; i <= n; i++) {
-			dp[i][0] = 0;
-		}
+		// If coins is empty, and amount is zero, 1 would be returned
+		dp[0][0] = 0;
 
 		// First row initialization
 		for (int j = 1; j <= amount; j++) {
@@ -50,7 +48,7 @@ public class CoinChangeSolution2 {
 		}
 
 		for (int i = 1; i <= n; i++) {
-			for (int j = 1; j <= amount; j++) {
+			for (int j = 0; j <= amount; j++) {
 				if (coins[i - 1] <= j) {
 					dp[i][j] = Math.min(1 + dp[i][j - coins[i - 1]], dp[i - 1][j]);
 				} else {
