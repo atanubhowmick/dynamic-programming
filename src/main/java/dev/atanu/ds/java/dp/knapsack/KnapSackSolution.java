@@ -3,7 +3,16 @@ package dev.atanu.ds.java.dp.knapsack;
 /**
  * Sequence - 1
  * <br>
- * 
+ *
+ * Given n items where each item has some weight and profit associated with it and also given a bag with capacity W,
+ * [i.e., the bag can hold at most W weight in it]. The task is to put the items into the bag such that the sum of
+ * profits associated with them is the maximum possible.
+ *
+ * Input:  W = 9, profit[] = [2, 3, 1, 4], weight[] = [3, 4, 6, 5]
+ * Output: 7
+ *
+ * <br>
+ *
  * https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  * 
  * @author Atanu Bhowmick
@@ -15,7 +24,9 @@ public class KnapSackSolution {
 		KnapSackSolution solution = new KnapSackSolution();
 		int[] wt = new int[] { 3, 4, 6, 5 };
 		int[] val = new int[] { 2, 3, 1, 4 };
-		int maxWt = 8, n = 4;
+		int maxWt = 9;
+
+		int n = wt.length;
 
 		int maxValItr = solution.knapSackRecursion(maxWt, wt, val, n);
 		System.out.println(maxValItr);

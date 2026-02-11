@@ -27,7 +27,6 @@ public class CountOfSubsetSumSolution {
 	 * 
 	 * @param nums
 	 * @param sum
-	 * @param n
 	 * @return
 	 */
 	public int getSubsetCount(int[] nums, int sum) {

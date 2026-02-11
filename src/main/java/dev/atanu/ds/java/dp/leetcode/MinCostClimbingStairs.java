@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dev.atanu.ds.java.dp.knapsack;
+package dev.atanu.ds.java.dp.leetcode;
 
 /**
  * https://leetcode.com/problems/min-cost-climbing-stairs/
