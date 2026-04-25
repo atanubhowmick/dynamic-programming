@@ -1,4 +1,4 @@
-package dev.atanu.ds.java.dp.leetcode;
+package dev.atanu.ds.java.dp.houserobber;
 
 import java.util.Arrays;
 

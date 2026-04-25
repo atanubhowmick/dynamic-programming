@@ -1,6 +1,4 @@
-package dev.atanu.ds.java.dp.leetcode;
-
-import java.util.Arrays;
+package dev.atanu.ds.java.dp.houserobber;
 
 /**
  * https://leetcode.com/problems/house-robber-ii/
